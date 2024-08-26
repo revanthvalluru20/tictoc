@@ -1,0 +1,105 @@
+/* Basic body styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    justify-content: center;
+}
+
+h1 {
+    margin-top: 20px;
+    color: #c20707;
+}
+
+/* Default board size for larger screens */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    width: 90vw;
+    max-width: 400px;
+    height: 90vw;
+    max-height: 400px;
+    background-color: rgb(165, 165, 215);
+    margin-top: 20px;
+}
+
+/* Responsive cells within the board */
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(25, 18, 59);
+    border: 2px solid #333;
+    font-size: calc(16px + 4vw);
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    color: azure;
+}
+
+/* Responsive status text */
+#status {
+    margin-top: 50px;
+    font-size: calc(16px + 1vw);
+    color: #c20707;
+}
+
+/* Style and make the reset button responsive */
+#resetBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: calc(14px + 0.5vw);
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+/* Media query for medium screens (tablets and small laptops) */
+@media (max-width: 768px) {
+    .board {
+        width: 70vw;
+        height: 70vw;
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    #status {
+        font-size: calc(14px + 1vw);
+    }
+
+    #resetBtn {
+        font-size: calc(12px + 1vw);
+    }
+}
+
+/* Media query for small screens (mobile devices) */
+@media (max-width: 480px) {
+    .board {
+        width: 60vw;
+        height: 60vw;
+        max-width: 240px;
+        max-height: 240px;
+    }
+
+    .cell {
+        font-size: calc(14px + 3vw);
+    }
+
+    #status {
+        font-size: calc(12px + 1vw);
+    }
+
+    #resetBtn {
+        font-size: calc(12px + 0.5vw);
+        padding: 8px 16px;
+    }
+}
